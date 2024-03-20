@@ -2,6 +2,8 @@
     <img src="images/tensorflow-micropython-examples.png">
 </p>
 
+This is a personal project to add upysh and pye to a fork of the upstream project.
+
 # Tensorflow Micropython Examples
 
 The purpose of this project is to make a custom micropython firmware that installs tensorflow lite for micro controllers
