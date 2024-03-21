@@ -170,30 +170,18 @@ ESP32D0WDQ6 4MB Flash
 
 Download the firmware from the latest ci build.
 
-The zip file contains:
-1. The bootloader
-2. The partition table
-3. The firmware
+The zip file contains the unified firmware in a file called firmware.bin.
 
 ## Flash from Windows 
 ```
-esptool.py --port /dev/ttyUSB0 erase_flash
+esptool.py --port COM5 erase_flash
 esptool.py --chip esp32 --port COM5 write_flash -z 0x1000 firmware.bin
 ```
-...
-
-
-<strike>
- esptool.py -p COM5 -b 460800 --before default_reset --after hard_reset --chip esp32 write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 micropython.bin
-</strike>
-
-![](./images/write-firmware.png)
-
 ## Flash for Linux
 
 ```
-esptool.py --port /dev/ttyUSB0 erase_flash
-esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 firmware.bin
+esptool.py --port /dev/ttyUSB2 erase_flash
+esptool.py --chip esp32 --port /dev/ttyUSB2 write_flash -z 0x1000 firmware.bin
 ```
 
 # Credits
