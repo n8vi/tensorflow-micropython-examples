@@ -21,10 +21,8 @@ jobs:
         run: |
           git submodule init
           git submodule update --recursive
-          cp manifest.py micropython/ports/esp32/boards/manifest.py
-          mkdir -p micropython/ports/esp32/boards/modules/
-          cp pye.py micropython/ports/esp32/boards/modules/
-          cp upysh.py micropython/ports/esp32/boards/modules/
+          cp pye.py micropython/ports/esp32/modules/
+          cp upysh.py micropython/ports/esp32/modules/
           cd micropython
           git submodule update --init lib/axtls
           git submodule update --init lib/berkeley-db-1.xx
