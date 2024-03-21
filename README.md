@@ -177,14 +177,24 @@ The zip file contains:
 
 ## Flash from Windows 
 ```
- esptool.py -p COM5 -b 460800 --before default_reset --after hard_reset --chip esp32 write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 micropython.bin
+esptool.py --port /dev/ttyUSB0 erase_flash
+esptool.py --chip esp32 --port COM5 write_flash -z 0x1000 firmware.bin
 ```
+...
+
+
+<strike>
+ esptool.py -p COM5 -b 460800 --before default_reset --after hard_reset --chip esp32 write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 micropython.bin
+</strike>
 
 ![](./images/write-firmware.png)
 
 ## Flash for Linux
 
-TODO 
+```
+esptool.py --port /dev/ttyUSB0 erase_flash
+esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 firmware.bin
+```
 
 # Credits
 
